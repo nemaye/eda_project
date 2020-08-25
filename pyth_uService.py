@@ -1,6 +1,6 @@
 import socket 
 
-UDP_IP = "192.168.0.105"	#your local ip address or ip of server
+UDP_IP = "127.0.0.1"	#your local ip address or ip of server
 UDP_PORT = 8000				#your port
 
 sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)

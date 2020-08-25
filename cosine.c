@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 //**********************************
 
 
-    int sock = 0, valread; 
+    int sock = 0; 
     struct sockaddr_in serv_addr; 
 
     if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) 
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
     serv_addr.sin_family = AF_INET; 
     serv_addr.sin_port = htons(PORT); 
     
-    inet_pton(AF_INET, "192.168.0.105", &serv_addr.sin_addr);       //Enter the local ip or the ip of the server you want to host to
+    inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr);       //Enter the local ip or the ip of the server you want to host to
 
 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) 
