@@ -12,4 +12,4 @@ while True:
 	if data[8] is 'c':
 		cos = data[:8]
 	print('cosine of angle= ' + cos)
-	print('cos squared= ' + str(float(cos)**2))
+	print('cos squared= {:.5f}' .format(float(cos)**2))
