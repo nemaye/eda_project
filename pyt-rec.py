@@ -9,5 +9,7 @@ sock.bind ((UDP_IP, UDP_PORT))
 while True:
 	print('listening')
 	data, addr = sock.recvfrom(10000000)
-	data = data[:8]
-	print(data)
+	if data[8] is 'c':
+		cos = data[:8]
+	print('cosine of angle= ' + cos)
+	print('cos squared= ' + str(float(cos)**2))

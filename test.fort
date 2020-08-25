@@ -1,0 +1,20 @@
+program testsocket
+  use, intrinsic ::  iso_c_binding
+
+  implicit none
+
+  interface
+    function socket(domain, type, protocol) bind(c, name="socket")
+      use, intrinsic :: iso_c_binding
+      integer(kind=c_int) :: socket
+      integer(kind=c_int), value :: domain, type, protocol
+    end function socket
+  end interface
+
+  integer :: sock
+
+  sock = socket(2_c_int, 1_c_int, 6_c_int)
+
+  write(*,*) "Socket returned: ", sock
+
+end program testsocket
